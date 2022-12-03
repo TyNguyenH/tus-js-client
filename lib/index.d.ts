@@ -30,7 +30,7 @@ interface UploadOptions {
 
   onProgress?: ((bytesSent: number, bytesTotal: number) => void) | null;
   onChunkComplete?: ((chunkSize: number, bytesAccepted: number, bytesTotal: number) => void) | null;
-  onSuccess?: (() => void) | null;
+  onSuccess?: ((res: HttpResponse) => void) | null;
   onError?: ((error: (Error | DetailedError)) => void) | null;
   onShouldRetry?: ((error: (Error | DetailedError), retryAttempt: number, options: UploadOptions) => boolean) | null;
 

@@ -24,7 +24,7 @@ const upload = new tus.Upload(file, {
         console.log(bytesSent, bytesTotal, percentage + "%");
     },
     onChunkComplete: (chunkSize: number, bytesAccepted: number) => {},
-    onSuccess: () => {
+    onSuccess: (res: tus.HttpResponse) => {
     	console.log("Download from %s complete", upload.url);
     },
     onError: (error: (Error | DetailedError)) => {
